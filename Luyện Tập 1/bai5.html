@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body onload="timKiem()">
+<script>
+    let ngoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let chomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major' , 'Leo'];
+    let index = -1;
+    function timKiem (){
+        let a = prompt('Bạn cần tìm chòm sao của ngôi sao nào ?')
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (a === ngoiSao[i]){
+                index = i ;
+            }
+        }
+        if (index !== -1){
+            alert(chomSao[index])
+        }else if (index === -1){
+            alert('Không có chòm sao tương ứng :((')
+        }
+    }
+</script>
+</body>
+</html>
