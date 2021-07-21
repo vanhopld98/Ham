@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body onload="timMin()">
+<script>
+    function timMin(){
+        let a = parseInt(prompt('Nhập số thứ nhất đê:'));
+        let b = parseInt(prompt('Nhập số thứ hai đê:'));
+        let c = parseInt(prompt('Nhập số thứ ba đê:'));
+        if (a<b && a < c){
+            alert(a +' là số nhỏ nhất');
+        }else if (b<c){
+            alert(b+' là số nhỏ nhất');
+        }else {
+            alert(c+' là số nhỏ nhất');
+        }
+    }
+</script>
+</body>
+</html>

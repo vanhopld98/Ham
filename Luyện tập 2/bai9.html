@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 9</title>
+</head>
+<body onload="checkKyTu()">
+<script>
+    let a = [];
+    function checkKyTu() {
+        createArray()
+        let count = 0
+        let timKyTu = prompt('Bạn cần tìm kí tự?');
+        for (let i = 0; i < a.length; i++) {
+            if (timKyTu === a[i]) {
+                count++
+            }
+        }
+        return count
+    }
+    function display (count){
+        if (count !== 0){
+            alert(count)
+        }else {
+            alert('-1')
+        }
+    }
+    function createArray() {
+        for (let i = 0; i < 10; i++) {
+            let b = prompt('Nhập mảng (Tối đa 10 kí tự)');
+            a.push(b)
+        }
+    }
+    let count = checkKyTu()
+    display(count)
+</script>
+</body>
+</html>
