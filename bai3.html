@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        button{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        tr{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h3>New Product</h3>
+    <input id="inputproduct" placeholder="Aa" style="padding: 10px">
+    <button onclick="add()">ADD</button>
+    <div hidden id="editproduct">
+        <input type="text" id="textEdit" style="padding: 10px">
+        <button onclick="editProduct2()" id="edit">Edit</button>
+    </div>
+<table border="1">
+    <tr>
+        <th colspan="3">Display All Product</th>
+    </tr>
+    <tbody id="1">
+    </tbody>
+</table>
+<script>
+    let productname = ['Sony Xperia','SamSung Galaxy','Nokia 6','Xioami Redmi Note 4','Apple Iphone 6S','Xiaomi Mi 5s Plus','Apple iPhone 8 Plus','Fujitsu F-04E','Appo A71'];
+    function showListProduct(){
+        let srt = "";
+        srt += "<tr><td colspan='2'>"+"<b>Product Name"+"</td>"+"<td style='color: red'>"+"<b>"+productname.length+"</b>"+ "<b> products</b>" +"</td></tr>"
+        for (let i = 0; i < productname.length; i++) {
+            srt += "<tr><td style='width: 350px'>"+productname[i]+"</td>"+
+                   "<th style='width: 70px, '>"+`<button onclick='editProduct(${i})'>Edit</button>`+"</th>"+
+                   "<th style='width: 70px,  '>"+`<button onclick='deleteProduct(${i})'>Delete</button>`+"</th></tr>"
+        }
+        document.getElementById('1').innerHTML = srt;
+    }
+    showListProduct()
+    function add (){
+        let b=document.getElementById('inputproduct').value;
+        productname.push(b)
+        showListProduct()
+    }
+    function editProduct(i){
+        document.getElementById('editproduct').style.display = 'block';
+        document.getElementById('textEdit').value  = productname[i];
+        document.getElementById('edit').value  = i;
+        showListProduct()
+    }
+    function editProduct2(){
+        let c = document.getElementById('textEdit').value;
+        let d = document.getElementById('edit').value;
+        productname[d] = c
+        showListProduct()
+    }
+    function deleteProduct(i){
+        productname.splice(i,1)
+        showListProduct()
+    }
+</script>
+    </center>
+</body>
+</html>
